@@ -1,5 +1,6 @@
 #import "../../style.typ": *
 
+#show: setup
 #stdtitle(
   [Analysis 2],
   [Serie n],

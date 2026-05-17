@@ -127,7 +127,9 @@ Put the function in $#R^3$. Now we can simply calculate $rot(F')$
 $
   rot(F') = Delta times F' = vec(d/(d x),d/(d y),d/(d z)) times vec(lambda x e^y, (y +1 x^2)e^y,0) = vec(0,0,2x e^y - lambda x e^y)
 $
-The function $F$ is conservative if $rot(f)=0$
+The function $F$ is conservative if $rot(F)=0$
 $
   => 2x e^y = lambda x e^y => lambda = 2
 $
+
+=

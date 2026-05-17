@@ -11,9 +11,9 @@
 = 
 We have:
 $
-  (gamma star sigma)(t) := cases(sigma(2t) quad & "for" 0 <= t <= 1/2, gamma  (2t-1) &"for" 1/2 <= t <= 1)
+  (gamma star sigma)(t) := cases(sigma(2t) quad & "for" 0 <= t <= 1/2,  gamma  (2t-1) &"for" 1/2 <= t <= 1)
 $
-Using the definition of line integrals
+Using the definition of line integrals 
 
 $
   int_(gamma star sigma) F dot d(gamma star sigma) &= int_0^1 F(gamma star sigma (t)) dot (gamma star sigma)'(t) d t\
@@ -72,7 +72,7 @@ $
   H(0,s) = p quad H(1,s) = x\
    H_s (0,s) = H_s (1,s)= 0
 $
-The points are fix
+The points are fixed
 $
   => f'(s) = 0
 $

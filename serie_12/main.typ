@@ -103,7 +103,7 @@ $
   ==
  From stokes $=>$ for every oriented area $S$
  $
-   int_(partial S) F dot d gamma = int_s rot(F) dot d S =0
+   int_(partial S) F dot d gamma = int_S rot(F) dot d S =0
  $
  Since we can get an area which border is equal to the two path $gamma_1,gamma_2$ and does not intersect the $z$-axis:
  $
@@ -131,5 +131,99 @@ The function $F$ is conservative if $rot(F)=0$
 $
   => 2x e^y = lambda x e^y => lambda = 2
 $
+We want to find a potential $phi$
+$
+  Delta phi = F
+$
+$
+  phi(x,y) = int 2x e^y d x = x^2 e^y + C(y)
+$
+$
+  (part phi)/(part y) = x^2 e^y + C'(y) = (y + 1 +x^2)e^y\
+  => C'(y) = (y+1)e^y\
+  => C(y) = y e^y + c\
+  => phi(x,y) = (y+x^2 )e^y + c
+$
+=
+
+$
+  int_S rot(F) dot d n &= int_S vec(-2z,0,-x) vec(x,y,z) d S\
+  &= int_S -3 x z dot  d S\
+  &= -3 int_0^(2pi) int_0^(pi/2) sin(phi) cos(theta) cos(phi) sin(phi) d phi d theta\
+  &= 0
+
+$
+$
+  int_S rot(F) n d S & = int_(part S) F dot d gamma
+$
+with
+$
+  gamma(t) = (cos(t),sin(t),0)\
+  gamma'(t) = (-sin(t),cos(t),0)\
+  F(gamma(t)) = sin(t)cos(t),0,1)
+$
+$
+  int_0^(2pi) (sin(t)cos(t),0,1) dot (-sin(t),cos(t),0) d t = int_0^(2pi) -sin^2(t) cos(t) d t
+  
+$
+$cos$ and $sin$ are $2pi$ periodically 
+$
+  int_S rot(F) dot d n = 0
+$
 
 =
+==
+$
+  rot(phi f) = nabla times (phi f) = (nabla phi) times f + phi nabla f
+= (nabla phi) times f + phi rot (f)
+$
+==
+$
+  div(phi f)  = sum_(i=1)^3 part/(part x_i) (phi_i f_i) = sum_(i=1)^3 (part phi)/(part x_i) f_i + phi (part f_i)/(part x_i) = ip(nabla phi,f) + phi div(f)
+$
+==
+$
+  div(rot(f)) = part_x (part_y f_z - part_z f_y) + part_y (part_z f_x -part_x f_z) + part_z (part_x f_y- part_y f_x) =0
+$
+==
+
+$
+  rot(nabla phi) =  vec(part_y part_z phi - part_z part_y phi,part_z part_x phi -part_x part_z phi,part_x part_y phi - part_y part_x phi) = vec(0,0,0)
+$
+=
+
+$(a) = -(b)$
+=
+==
+let 
+$
+  omega = d psi^1 and dots and  d psi^n
+$
+Each $d psi^i$ is a function of $(x_1,dots,x_n)$
+$
+  d psi^j = sum_(i=1)^n (part  psi^j)/(part x_i ) d x^i
+$
+$
+  omega = sum_(i_1=1)^n (part psi^1)/(part x_i_1) d x^(i_1) and dots and sum_(i_n = 1)^n (part psi^n)/(part x_i_n) d x^(i_n)
+$
+Since $d x^i and d x ^i =0$ only permutations using all $d x, d x^2 ,dots d x^n$ survive.\
+Denote $sigma$ as such a permutation. 
+$
+  sum_(sigma in S_n)  (product_(i=1)^n (part psi^i)/(part x_sigma(i))) d x^(sigma(1)) and dots and d x^(sigma(n)) 
+$
+The order matters
+$
+  omega &=sum_(sigma in S_n) sgn(sigma)(product^n_(i=1) (part psi^i)/(part x_(sigma(i)))) d x^1 and dots and d x^n\
+  &= det((part psi_j)/(part x_i)) d x^1 and dots and d x^n
+$
+
+==
+$
+  Phi : U subset #R^n &-> #R^n\
+  x& |-> Phi(x) = y
+$
+$
+  int_(Phi(U)) f(y) d y &= int_(U) f(Phi(x)) abs(det(D Phi(x))) d x\
+  &= int(U) f(Phi(x)) abs(det((part phi_j)/(part x_i)))d x
+$
+  

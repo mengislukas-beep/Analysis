@@ -223,7 +223,5 @@ $
   x& |-> Phi(x) = y
 $
 $
-  int_(Phi(U)) f(y) d y &= int_(U) f(Phi(x)) abs(det(D Phi(x))) d x\
-  &= int(U) f(Phi(x)) abs(det((part phi_j)/(part x_i)))d x
+  int_(psi(U)) f(y) d y^1 and dots and d y^n &= int_U f(psi(x)) det(D psi(x)) d x^1 and dots and d y^n = int_U f(psi(x)) d psi^1 and dots and d psi^n
 $
-  
